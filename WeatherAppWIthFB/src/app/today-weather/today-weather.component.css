@@ -1,0 +1,63 @@
+.city-input {
+  padding: 15px;
+  width: 450px;
+  margin-left: 450px;
+  margin-top: 25px;
+}
+.input-group-btn {
+  padding-left: 20px;
+  padding-top: 32px;
+}
+
+/* .time{
+    background: #f65041;
+    height:155px;
+    width: 155px;
+    margin-top: 10px;
+   margin-left: 570px;
+   border-radius: 50%;
+   display: inline-block;
+   font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(99, 97, 97, 0.2), 0 6px 20px 0 rgba(245, 244, 244, 0.19);
+    
+} */
+.data-card {
+  text-align: center;
+}
+p,
+h2,
+span {
+  color: white;
+}
+.weatherWidgetRow {
+  color: white;
+}
+.sun {
+  margin-top: 10px;
+  color: yellow;
+  filter: drop-shadow(1px 1px 10px yellow);
+}
+
+.cloudDiv {
+  margin-top: -40px;
+}
+.cloud {
+  color: rgb(104, 175, 197);
+  filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
+  animation-name: cloudMovement;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes cloudMovement {
+  from {
+    margin-left: -55px;
+  }
+  to {
+    margin-left: 65px;
+  }
+}

@@ -1,0 +1,23 @@
+.city-input {
+  padding: 15px;
+  width: 450px;
+  margin-left: 450px;
+  margin-top: 25px;
+}
+
+
+.input-group-btn {
+  padding-left: 20px;
+  padding-top: 32px;
+}
+
+  .card{
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+      margin-top: 40px;
+      margin-left: 560px;
+     width: 250px;
+     height: 400px;
+     border-radius: 5px;
+ }
+ 

@@ -1,0 +1,31 @@
+<div class="weatherWidgetRow">
+  <div class="input-group mb-2">
+    <form (ngSubmit)="fiveDayForecastByCity(userInput.value)">
+      <input
+        class="city-input"
+        name="city"
+        type="text"
+        placeholder="Enter city name"
+        #userInput
+      />
+    </form>
+  </div>
+</div>
+<div class="card">
+  <div class="row">
+ <div class="forecast" *ngFor="let item of Forecast">
+  <div class="date">
+    <h6>{{ item.date | date }}</h6>
+    <div class="name"><h3>{{item.name}}</h3>
+<div class="temp">
+  <h2>{{item.avgtemp_c}}&deg;C</h2>
+  <hr>
+</div>
+  </div>
+</div>
+</div>
+</div><!--row end-->
+</div><!--container end-->
+
+
+    

@@ -1,0 +1,66 @@
+<div *ngIf="weather" class="weatherWidgetRow">
+  <div class="input-group mb-2">
+    <input
+      class="city-input"
+      name="city"
+      type="text"
+      placeholder="Enter city name"
+      [(ngModel)]="city"
+      #userInput
+    />
+    <div class="input-group-btn">
+      <button
+        class="btn btn-outline-success"
+        (click)="getCity(userInput.value)"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <!--input end-->
+  <div class="data-card">
+    <h2>{{ weather.name }}, {{ weather.sys.country }}</h2>
+    <div class="data">
+      <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!weather.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div class="weatherWidgetRow cloudDiv">
+      <i class="fas fa-cloud fa-3x cloud"></i>
+    </div>
+    <span class="temp" style="font-size: 70px; margin-top: 0%">
+      {{ weather.main.temp | number: "1.0-0" }}&#173;°F</span
+    >
+    <div class="weatherWidgetRow" style="font-size: 20px; margin-top: 5px">
+      {{ weather.weather[0].description }}
+    </div>
+    <div class="time">
+      Updated as of {{ currentTime | date: "HH:mm - EE MMM" }}
+    </div>
+    <br />
+    <div class="weatherWidgetRow" style="font-size: 15px">
+      Feels Like {{ weather.main.feels_like }}°F
+      <span style="margin-left: 25px"
+        >Humidity {{ weather.main.humidity }}%
+      </span>
+      <span style="margin-left: 25px">
+        Pressure {{ weather.main.pressure }}</span
+      >
+    </div>
+    <div class="weatherWidgetRow" style="font-size: 15px; margin-top: 5px">
+      Sunrise at {{ weather.sys.sunrise * 1000 | date: "H:mm" }}
+      <span style="margin-left: 25px">
+        Sunset at {{ weather.sys.sunset * 1000 | date: "H:mm" }}
+      </span>
+      <span style="margin-left: 25px"
+        >Wind &#10146; {{ weather.wind.speed }}</span
+      >
+    </div>
+    <!-- <div class="weatherWidgetRow" style="font-size: 15px;margin-top: 5px;"></div>Coords {{ weather.coord.lat }}, {{ weather.coord.lon }}</div> -->
+    <div class="weatherWidgetRow" style="font-size: 15px; margin-top: 5px">
+      Visibility {{ weather.visibility }}
+      <span style="margin-left: 25px"> Clouds {{ weather.clouds.all }} </span>
+    </div>
+  </div>
+</div>
