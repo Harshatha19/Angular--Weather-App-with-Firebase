@@ -6,23 +6,23 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
 
       - name: Build Angular app
-        run: npm run build -- --configuration production --base-href "https://harshatha19.github.io/Angular--Weather-App-with-Firebase/"
+        run: npm run build -- --configuration production --base-href "/Angular--Weather-App-with-Firebase/"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
