@@ -27,5 +27,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: dist/app-weather
+          branch: gh-pages        # The branch the action should deploy to
+          folder: dist/app-weather # The folder where Angular places the build output
+          clean: true              # Remove old files from gh-pages branch
+          token: ${{ secrets.GITHUB_TOKEN }}
